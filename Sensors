@@ -4,7 +4,7 @@ import.edu.wpi.first.wpilibj.Spark;
 import.edu.wpi.first.wpilibj.DriverStation;
 import.edu.wpi.first.wpilibj.Joystick;
 import.edu.wpi.first.wpilibj.Gyro;
-import.edu.wpi.first.wpilibj.Timer;
+import.edu.qpi.first.wpilibj.Timer;
 
 public class Robot extends InterativeRobot {
 
@@ -12,17 +12,17 @@ public class Robot extends InterativeRobot {
  private Spark spark2;
  private Spark spark3;
  private Spark spark4;
- 
- private ArcadeDrive drive;
- private Gyro gyro;
- 
- double Kp = 0.03;
- 
- public GyroSample() {
-   gyro = new Gyro(1);
-   drive = new ArcadeDrive(0, 1);
-   drive.setExpiration(0.1);
- }
+
+private ArcadeDrive drive;
+private Gyro gyro;
+
+double Kp= 0.03;
+
+public GyroSample() {
+  gyro = new Gyro(1)'
+  drive = new ArcadeDrive(0, 1);
+  drive.setExpiration(0,1);
+}
  
  DriverStation matchInfo = DriverStation.getInstance();
  
@@ -31,13 +31,14 @@ public class Robot extends InterativeRobot {
 }
 
 public void autonomousPeriodic() {
-  gryo.reset();
-  while (isAutonmousPeriodic()) {
-    double angle = gyro.getAngle();
-    drive.drive(-1.0, -angle*Kp); //drives towards 0
-    timer.delay(0.004);
-  }
-  drive.drive(0.0, 0.0) 
+ gyro.reset();
+ while (isAutonomousPeriodic()) {
+ double angle = gyro.getAngle();
+ drive.drive(-1.0, -angle*Kp); //drives towards 0
+ timer.delay(0.004);
+ }
+ drive.drive(0.0, 0.0)
+
 }
 
 public void teleopInit() {
